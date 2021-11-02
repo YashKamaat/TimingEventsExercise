@@ -41,5 +41,28 @@ setTimeout(() => {
     });
 //===========================================
 
-  
-  
+  //BONUS
+//4
+//===========================================
+const countdown = document.querySelector(`#countdown`);
+const p4 = document.createElement(`p`);
+p4.innerText = `2:00`;
+countdown.append(p4);
+
+const startTime = 2;
+let times = startTime * 60;
+function updateCountdown(){
+  const minutes = Math.floor(times / 60);
+  let seconds = times % 60;
+  seconds = seconds < 10 ? `0` + seconds : seconds;
+  countdown.innerText = `${minutes} : ${seconds}`;
+  times--;
+}
+
+setInterval(() => {
+  updateCountdown();
+  if (times <= 0){
+    countdown.innerText = `TIME IS UP`;
+  }
+}, 1000);
+//===========================================
