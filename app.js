@@ -54,7 +54,7 @@ let times = startTime * 60;
 function updateCountdown(){
   const minutes = Math.floor(times / 60);
   let seconds = times % 60;
-  seconds = seconds < 10 ? `0` + seconds : seconds;
+  seconds = (seconds < 10) ? `0` + seconds : seconds;
   countdown.innerText = `${minutes} : ${seconds}`;
   times--;
 }
